@@ -1,0 +1,56 @@
+server:
+  servlet:
+    context-path: /api/technical-test
+  error:
+    include-message: always
+
+spring:
+  config:
+    import: optional:file:.env[.properties]
+  technical-test:
+    datasource:
+      jdbc-url: ${DB_TECHNICAL_TEST_URL}
+      username: ${DB_TECHNICAL_TEST_USERNAME}
+      password:
+      driver-class-name: ${DB_TECHNICAL_TEST_DRIVER_NAME}
+      dialect: ${DB_TECHNICAL_TEST_DIALECT}
+      show-sql: true
+      format-sql: true
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  jpa:
+    hibernate:
+      ddl-auto: none
+
+hibernate:
+  hbm2ddl:
+    auto: update
+
+springdoc:
+  api-docs:
+    enabled: true
+    path: /v3/api-docs
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui.html
+    displayRequestDuration: true
+    tagsSorter: alpha
+    operationsSorter: alpha
+
+  logging:
+    level:
+      org:
+      springframework:
+        web: DEBUG
+
+# logs the SQL statements
+log4j:
+  logger:
+    org:
+      hibernate:
+        # logs the SQL statements
+        SQL: debug
+        # Logs the JDBC parameters passed to a query
+        type: trace
