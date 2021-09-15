@@ -21,7 +21,7 @@ import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
 /**
- * Represent exposition Rest of service "register user and displays the details of user".
+ * Represents the Rest exposure of the "register user and view user details" service.
  *
  * @author r-fonkoue
  */
