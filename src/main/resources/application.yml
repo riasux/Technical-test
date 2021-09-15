@@ -3,7 +3,7 @@ server:
     context-path: /api/technical-test
   error:
     include-message: always
-  port: 8082
+  port: ${TECHNICAL_TEST_SERVER_PORT_NUMBER}
 
 spring:
   config:
