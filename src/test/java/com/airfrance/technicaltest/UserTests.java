@@ -103,10 +103,9 @@ class UserTests extends TechnicalTestApplicationTests {
     }
 
     @Test
-    public void saveUser_BAD_REQUEST() {
+    public void saveUser_Without_Username() {
         //GIVEN
         UserDto userDto = new UserDto();
-        userDto.setUsername("benjamin");
         userDto.setBirthDate(LocalDate.of(2001, 10, 14));
         userDto.setCountry("france");
         userDto.setPhoneNumber("+33782019857");
@@ -120,7 +119,7 @@ class UserTests extends TechnicalTestApplicationTests {
         ResponseEntity<UserDto> saveUserResponse = restTemplate.exchange(uri, HttpMethod.POST, payloadWithoutAuth(userDto), UserDto.class);
 
         //THEN
-        assertEquals(HttpStatus.CREATED, saveUserResponse.getStatusCode());
+        assertEquals(HttpStatus.BAD_REQUEST, saveUserResponse.getStatusCode());
     }
 
     public List<UserEntity> buildUserEntities() {
