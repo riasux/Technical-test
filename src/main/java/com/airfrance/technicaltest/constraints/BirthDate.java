@@ -9,7 +9,7 @@ import java.lang.annotation.*;
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 public @interface BirthDate {
-    String message() default "{sorry error bithdate <18}";
+    String message() default "{date.birth.greaterOrEqualThan18}";
 
     Class<?>[] groups() default {};
 
