@@ -21,6 +21,11 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+/**
+ * user operation test class
+ *
+ * @author r-fonkoue
+ */
 @ExtendWith(SpringExtension.class)
 class UserTests extends TechnicalTestApplicationTests {
 

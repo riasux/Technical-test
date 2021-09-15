@@ -18,6 +18,12 @@ import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 import java.util.HashMap;
 
+
+/**
+ * Represents the configuration class for API documentation
+ *
+ * @author r-fonkoue
+ */
 @RequiredArgsConstructor
 @Configuration
 @EnableTransactionManagement

@@ -11,6 +11,11 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
+/**
+ * Represents the configuration class for API documentation
+ *
+ * @author r-fonkoue
+ */
 @EnableAspectJAutoProxy
 @Configuration
 @RequiredArgsConstructor

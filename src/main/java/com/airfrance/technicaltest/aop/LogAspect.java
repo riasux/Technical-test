@@ -8,6 +8,12 @@ import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
 
+
+/**
+ * Module allowing to trace the invocation of our methods with the parameters used
+ *
+ * @author r-fonkoue
+ */
 @Aspect
 @Component
 @Slf4j

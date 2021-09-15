@@ -9,6 +9,11 @@ import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
 import java.time.LocalDate;
 
+/**
+ * User definition
+ *
+ * @author r-fonkoue
+ */
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
@@ -18,11 +23,11 @@ public class UserDto {
     @NotBlank(message = "{username.not.blank}")
     @Size(max = 100)
     private String username;
-    @NotNull(message = "The date of birth is required.")
-    @BirthDate(message = "The birth date must be greater or equal than 18")
-    @Past(message = "The date of birth must be in past.")
+    @NotNull(message = "{date.birth.required}")
+    @BirthDate
+    @Past(message = "{date.user.past}")
     private LocalDate birthDate;
-    @NotBlank(message = "Country can't be blank")
+    @NotBlank(message = "{country.not.blank}")
     @Size(max = 100)
     private String country;
     private String phoneNumber;

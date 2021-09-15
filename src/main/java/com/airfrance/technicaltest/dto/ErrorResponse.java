@@ -5,6 +5,11 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+/**
+ * Error class definition
+ *
+ * @author r-fonkoue
+ */
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter

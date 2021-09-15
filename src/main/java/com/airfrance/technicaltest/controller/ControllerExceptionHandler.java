@@ -12,6 +12,11 @@ import org.springframework.web.server.ResponseStatusException;
 import javax.validation.ConstraintViolationException;
 import javax.validation.ValidationException;
 
+/**
+ * Represents the global exception handler.
+ *
+ * @author r-fonkoue
+ */
 @ControllerAdvice
 public class ControllerExceptionHandler {
 
