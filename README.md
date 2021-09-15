@@ -2,11 +2,11 @@
 
 ## With TUs
 
-`mvn clean install`
+`clean install`
 
 ## Without TUs
 
-`mvn clean install -DskipTests`
+`clean install -DskipTests`
 
 ## Variables d'environnement
 
