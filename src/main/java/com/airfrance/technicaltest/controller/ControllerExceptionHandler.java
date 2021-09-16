@@ -11,6 +11,7 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.server.ResponseStatusException;
 
 import javax.validation.ConstraintViolationException;
 import javax.validation.ValidationException;
@@ -48,7 +49,7 @@ public class ControllerExceptionHandler {
         e.getBindingResult().getAllErrors().forEach((error) -> {
             errorMessages.add(error.getDefaultMessage());
         });
-        return new ResponseEntity<>(new ErrorResponse(String.join(" AND ", errorMessages), HttpStatus.BAD_REQUEST), HttpStatus.BAD_REQUEST);
+        return new ResponseEntity<>(new ErrorResponse(String.join(" | ", errorMessages), HttpStatus.BAD_REQUEST), HttpStatus.BAD_REQUEST);
     }
 
     @ResponseBody
@@ -72,6 +73,12 @@ public class ControllerExceptionHandler {
                 String.format(messageSource.getMessage("error.invalid.format", null, LocaleContextHolder.getLocale()), e.getValue(), e.getTargetType().getSimpleName()), HttpStatus.BAD_REQUEST)
                 , HttpStatus.BAD_REQUEST);
 
+    }
+
+    @ResponseBody
+    @ExceptionHandler(ResponseStatusException.class)
+    ResponseEntity<ErrorResponse> exceptionHandler(ResponseStatusException e) {
+        return new ResponseEntity<>(new ErrorResponse(e.getReason(), e.getStatus()), e.getStatus());
     }
 
 }
