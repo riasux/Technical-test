@@ -1,4 +1,4 @@
-package com.airfrance.technicaltest.constraints;
+package com.airfrance.technicaltest.constraints.validator.birthdate;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
